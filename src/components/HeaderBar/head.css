@@ -1,0 +1,92 @@
+.big-sur-header-title {
+
+    text-align: center;
+    height: var(--head-title-height);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--title-color);
+    font-size: 30px;
+    font-weight: 600;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--title-color);
+    position: relative;
+
+}
+.big-sur-header-bg {
+    /*background-image: url("../../assets/navigation.jpg");*/
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    box-shadow: 1px 2px 3px var(--header-box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+}
+.big-sur-header-tools {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    font-size: 20px;
+    width: 130px;
+}
+.big-sur-header-tools > * {
+    cursor: pointer;
+}
+
+.popover-user-content-wrapper {
+    width: 300px;
+    padding: 0 5%;
+    position: relative;
+    box-sizing: border-box;
+}
+.popover-user-content-wrapper > * {
+    padding: 6px 0;
+}
+.popover-user-content-wrapper > .popover-user-content-title {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 16px;
+}
+.popover-user-footer {
+    padding-right: 5%;
+}
+.popover-user-content-wrapper > .popover-user-content-title > .popover-user-content-item-left {
+    font-size: 18px;
+    margin-right: 8px;
+    color: #415165;
+}
+
+.popover-user-content-wrapper > .popover-user-content-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+.popover-user-content-wrapper > .popover-user-content-item > .popover-user-content-item-left {
+    margin-right: 5px;
+}
+
+.popover-user-content-item-right {
+    text-wrap: none;
+}
+.popover-user-content-right {
+    position: absolute;
+    height: auto;
+    right: 8px;
+    top: 0;
+    box-sizing: border-box;
+}
+.popover-user-content-right p {
+    text-align: center;
+    font-size: smaller;
+    margin-block-start: .3em;
+    margin-block-end: .3em;
+}

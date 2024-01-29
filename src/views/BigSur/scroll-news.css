@@ -1,0 +1,29 @@
+.screen-box-container {
+    height: calc((100vh - 64px - 24px) * 0.5 - 50px - 30px);
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+.screen-box-container2 {
+    height: calc((100vh - 64px - 24px) * 0.5 - 50px - 30px - 110px);
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+.scroll-news-item {
+    position: relative;
+}
+.scroll-news-animate {
+    animation: item-a .6s ease-in-out forwards;
+}
+@keyframes item-a {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-47px);
+    }
+}
+.scroll-news-item-name {
+    font-size: 1.08em;
+}

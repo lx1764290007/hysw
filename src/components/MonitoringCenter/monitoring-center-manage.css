@@ -1,0 +1,16 @@
+.monitoring-center-group-manage-wrapper {
+    min-width: 40vw;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+.monitoring-center-group-manage-group-list {
+    border-right: 1px solid #409ea1;
+    height: 500px;
+    overflow-y: auto;
+}
+.monitoring-center-group-manage-items {
+    display: block;
+    width: 100%;
+    padding: 10px;
+}

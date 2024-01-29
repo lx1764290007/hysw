@@ -1,0 +1,8 @@
+.table-content {
+    height: 100%;
+    overflow-y: auto;
+}
+.ant-table-container,.ant-table-wrapper {
+    border-radius: unset !important;
+}
+

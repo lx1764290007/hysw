@@ -1,0 +1,224 @@
+<!--
+ * @Author: VC
+ * @Date: 2024-01-03 14:29:09
+ * @LastEditTime: 2024-01-03 16:31:09
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>绑定微信账号</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #app {
+        width: 100vw;
+        height: 70vh;
+      }
+      body {
+        background-color: #fff;
+      }
+      .loading {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(2px);
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #f7f7f7;
+        letter-spacing: 1px;
+      }
+      .hide {
+        display: none !important;
+      }
+      .success,
+      .error {
+        display: flex;
+        flex-flow: column nowrap;
+        height: 100%;
+        align-items: center;
+        padding-top: 30vw;
+      }
+      .icon {
+        width: 20vw;
+        height: 25vw;
+      }
+      .loading-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 2px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="success hide">
+        <svg
+          t="1704264029809"
+          class="icon"
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="4218"
+          width="200"
+          height="200"
+        >
+          <path
+            d="M512 981.333333C252.8 981.333333 42.666667 771.2 42.666667 512S252.8 42.666667 512 42.666667s469.333333 210.133333 469.333333 469.333333-210.133333 469.333333-469.333333 469.333333z m-50.432-326.101333L310.613333 504.32a32 32 0 0 0-45.226666 45.226667l174.72 174.762666a32.341333 32.341333 0 0 0 0.341333 0.341334l0.256 0.213333a32 32 0 0 0 50.048-6.144l337.450667-379.605333a32 32 0 1 0-47.872-42.496l-318.762667 358.613333z"
+            fill="#52C41A"
+            p-id="4219"
+          ></path>
+        </svg>
+        <h3>已绑定</h3>
+      </div>
+      <h3 class="normal hide">正在绑定...</h3>
+      <div class="error hide">
+        <svg
+          t="1704264535050"
+          class="icon"
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="5235"
+          width="200"
+          height="200"
+        >
+          <path
+            d="M549.044706 512l166.189176-166.249412a26.383059 26.383059 0 0 0 0-36.98447 26.383059 26.383059 0 0 0-37.044706 0L512 475.015529l-166.249412-166.249411a26.383059 26.383059 0 0 0-36.98447 0 26.383059 26.383059 0 0 0 0 37.044706L475.015529 512l-166.249411 166.249412a26.383059 26.383059 0 0 0 0 36.98447 26.383059 26.383059 0 0 0 37.044706 0L512 548.984471l166.249412 166.249411a26.383059 26.383059 0 0 0 36.98447 0 26.383059 26.383059 0 0 0 0-37.044706L548.984471 512zM512 1024a512 512 0 1 1 0-1024 512 512 0 0 1 0 1024z"
+            fill="#E84335"
+            p-id="5236"
+          ></path>
+        </svg>
+        <h3>错误的参数</h3>
+        <button onclick="onReload()" style="margin-top: 20vw;padding: 6px 20px">重 试</button>
+      </div>
+    </div>
+    <div class="loading hide">
+      <svg
+        t="1704264803647"
+        class="loading-icon"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        p-id="6261"
+        width="200"
+        height="200"
+      >
+        <path
+          d="M512.1 542.4c-16.8 0-30.4-13.6-30.4-30.4V297.9c0-16.8 13.6-30.4 30.4-30.4 16.8 0 30.4 13.6 30.4 30.4V512c0 16.8-13.6 30.4-30.4 30.4z"
+          p-id="6262"
+        ></path>
+        <path
+          d="M679.7 675.5c-6.6 0-13.3-2.2-18.9-6.6l-167.7-133c-13.2-10.4-15.4-29.6-4.9-42.7 10.4-13.1 29.6-15.4 42.7-4.9l167.7 133c13.2 10.4 15.4 29.6 4.9 42.7-6 7.5-14.8 11.5-23.8 11.5z"
+          p-id="6263"
+        ></path>
+        <path
+          d="M512 927.7C282.6 927.7 96 741.3 96 512S282.6 96.3 512 96.3 928 282.8 928 512 741.4 927.7 512 927.7z m0-770.6c-195.8 0-355.2 159.2-355.2 354.9S316.2 866.9 512 866.9 867.2 707.7 867.2 512 707.8 157.1 512 157.1z"
+          p-id="6264"
+        ></path>
+      </svg>
+      请稍后...
+    </div>
+    <script>
+      function onReload(){
+        window.location.reload();
+      }
+      ;(function () {
+        const CODE = 'code',
+          USER_ID = 'state',
+          URL = 'https://itao-tech.com/water/api/collect/code';
+
+        class useMVM {
+          #showLoading = false;
+          #state = 0;
+          #LOADING_DOM;
+          #SUCCESS_DOM;
+          #ERROR_DOM;
+          #NORMAL_DOM;
+          constructor() {
+            this.#SUCCESS_DOM = document.querySelector(".success");
+            this.#ERROR_DOM = document.querySelector(".error");
+            this.#NORMAL_DOM = document.querySelector(".normal");
+            this.#LOADING_DOM = document.querySelector(".loading");
+          }
+          get loading(){
+            return this.#showLoading;
+          }
+          set loading(val){
+            val? this.#LOADING_DOM.classList.remove(["hide"]):this.#LOADING_DOM.classList.add(["hide"]);
+            this.#showLoading = val;
+          }
+          get state(){
+            return this.#state;
+          }
+          set state(val){
+            if(val===0){
+              this.#NORMAL_DOM.classList.remove(["hide"]);
+              this.#SUCCESS_DOM.classList.add(["hide"]);
+              this.#ERROR_DOM.classList.add(["hide"]);
+            } else if(val===1){
+              this.#NORMAL_DOM.classList.add(["hide"]);
+              this.#SUCCESS_DOM.classList.remove(["hide"]);
+              this.#ERROR_DOM.classList.add(["hide"]);
+            } else if(val === 2) {
+              this.#NORMAL_DOM.classList.add(["hide"]);
+              this.#SUCCESS_DOM.classList.add(["hide"]);
+              this.#ERROR_DOM.classList.remove(["hide"]);
+            }
+            this.#state = val;
+          }
+        }
+        const useController = new useMVM();
+        useController.state = 0;
+        useController.loading = true;
+        /**
+         * @param {string} variable - 路由parameter的key
+         **/
+        const utilGetQueryVariable = function (variable) {
+          const query = window.location.search.substring(1).replace(new RegExp("&amp;",'g'),"&")
+          const vars = query.split('&')
+          for (let i = 0; i < vars.length; i++) {
+            const pair = vars[i].split('=')
+            if (pair[0] === variable) {
+              return pair[1]
+            }
+          }
+        }
+        const fetchData = async function () {
+          const _code = utilGetQueryVariable(CODE),
+            _uuid = utilGetQueryVariable(USER_ID);
+          fetch(URL + `?code=${_code}&userId=${_uuid}`,{ mode: "cors"}).then(async (res)=>{
+            try{
+              const a = await res.json();
+              if(a?.status === "success"){
+                useController.state = 1;
+              }else {
+                useController.state = 2;
+              }
+            }catch(e){
+              useController.state = 2;
+            }finally {
+              useController.loading = false;
+            }
+          }).catch(()=>{
+            useController.state = 2;
+          }).finally(()=>{
+            useController.loading = false;
+          })
+        }
+        fetchData()
+      })()
+    </script>
+  </body>
+</html>

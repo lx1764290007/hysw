@@ -1,0 +1,28 @@
+.monitoring-center-content {
+    display: block;
+    overflow-y: auto;
+    height: calc(100vh - 64px - 20px);
+    /*background:var(--background-color);*/
+}
+.monitoring-center-content .ant-card-body {
+    padding: 12px 24px;
+}
+.monitoring-center-content .ant-card-bordered {
+    border-radius: 0;
+
+    /*background: var(--background-color);*/
+    /*color: var(--font-color);*/
+}
+.monitoring-center-content-list-tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+
+}
+.monitoring-center-content-list-item {
+    font-size: large;
+    font-weight: 600;
+    cursor: pointer;
+}
+

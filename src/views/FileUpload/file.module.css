@@ -1,0 +1,6 @@
+.wrapper {
+    width: max(400px, 20vw);
+    margin: 0 auto;
+    height: 250px;
+    padding-bottom: 30px;
+}

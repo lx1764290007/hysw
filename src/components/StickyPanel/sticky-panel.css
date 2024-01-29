@@ -1,0 +1,31 @@
+.sticky-panel-wrapper {
+    position: fixed;
+    z-index: 99;
+    min-width: 130px;
+    background-image: url("../../assets/box.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: var(--font-color);
+    min-height: 110px;
+    max-height: 190px;
+    overflow-y: auto;
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+.sticky-panel-list {
+    text-align: center;
+    margin: 5px auto;
+}
+.sticky-panel-list-items {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 0 10px;
+}
+.sticky-panel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.sticky-panel-checkbox-text {
+    color: var(--font-color);
+}

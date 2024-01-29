@@ -1,0 +1,71 @@
+.sensor-info-wrapper {
+    max-height: 62vh;
+    overflow-y: auto;
+    margin: 15px 0;
+}
+.sensor-info-container {
+    position: relative;
+
+}
+.sensor-info-box-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+.sensor-info-box-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sensor-info-box-item {
+    flex: 1;
+}
+.sensor-info-panel-header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+}
+.sensor-info-panel-header-desc {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 15px;
+}
+.sensor-info-panel-header-icon {
+    position: relative;
+    font-size: 45px;
+    color: #409ea1;
+}
+.sensor-info-panel-content-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 0 10px;
+}
+.sensor-info-panel-content-item:nth-child(2n) {
+    background-color: rgba(92, 163, 245, 0.1);
+}
+.sensor-info-panel-content-item span:first-child {
+    font-size: 1.1em
+;
+    font-weight: 600;
+}
+.sensor-info-panel-container {
+    min-width: 250px;
+    overflow-y: hidden;
+}
+.sensor-info-box-footer {
+    margin-top: 20px;
+}
+.sensor-info-panel-content {
+    min-height: 250px;
+    margin-top: 10px;
+    overflow-y: auto;
+}
+.sensor-info-panel-date-picker {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}

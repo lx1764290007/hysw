@@ -1,0 +1,25 @@
+.box-wrapper {
+    height: auto;
+    overflow-y: auto;
+    position: relative;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 2px;
+    color: var(--font-color);
+    background-image: url("../../assets/box-line-big.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.box-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.box-wrapper:hover {
+    box-shadow: var(--box-shadow);
+}
+.box-wrapper-without-background {
+    background-image: none;
+    /*border: 1px solid #409ea1;*/
+}

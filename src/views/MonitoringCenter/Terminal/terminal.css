@@ -1,0 +1,26 @@
+.terminal-wrapper {
+    background-color: #333;
+    line-height: 20px;
+    --font-size: 15px;
+    --font-family: SansSerif, serif, "Segoe UI", Algerian 宋, Algerian, Arial;
+}
+
+.terminal-input {
+    border: none;
+    outline: none;
+    height: 200px;
+    width: 452px;
+    resize: none;
+    opacity: 1;
+    background: none;
+    color: #fff;
+    caret-color: #ffffff;
+    line-height: 20px;
+    z-index: 1;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    letter-spacing: 1px;
+    padding: 5px;
+    box-sizing: border-box;
+    word-break: break-all;
+}

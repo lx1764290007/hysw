@@ -1,0 +1,50 @@
+.device-manage-wrapper {
+    padding: 10px;
+    border-left: 1px solid var(--border-color);
+
+    color: var(--font-color);
+    height: 100%;
+}
+.device-manage-sider {
+    /*background: var(--background-color);*/
+    width: 300px !important;
+    min-width: 300px !important;
+    color: var(--font-color);
+    height: calc(100%)
+}
+.device-status-menu {
+    color: var(--font-color);
+}
+.device-manage-sider:hover {
+    color: var(--font-color) !important;
+}
+.device-list-footer {
+
+    color: var(--font-color);
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+
+}
+.monitoring-center-content-wrapper {
+    /*background-color: var(--background-color);*/
+}
+.monitoring-center-content-cell-right {
+    min-width: 220px;
+    max-width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 16px;
+}
+.monitoring-center-content-cell-right > span {
+    padding: 2px 4px;
+}
+.monitoring-center-content-cell-right > span:hover {
+    font-weight: 600;
+    box-shadow: 1px 2px 3px rgba(0,0,0,.1);
+}
+.monitoring-center-statistic-label {
+    color: var(--font-color);
+    font-weight: 600;
+}

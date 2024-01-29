@@ -1,0 +1,25 @@
+.device-manage-button-add-device {
+    position: absolute;
+    top: 15px;
+    right: 67px;
+}
+.device-manage-add-device-wrapper {
+    margin: 5px 0;
+    display: block;
+    text-align: center;
+}
+.device-manage-add-device-wrapper-fixed {
+    position: relative;
+    background: var(--background-color);
+    padding: 30px 0;
+
+}
+.device-manage-wrapper_ {
+    max-height: 600px;
+    overflow-y: auto;
+}
+.device-manage-button-clear {
+    position: absolute;
+    top: 80px;
+    left: 50px;
+}

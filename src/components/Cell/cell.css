@@ -1,0 +1,118 @@
+.cell-wrapper {
+    /*background-color: var(--background-color);*/
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 42px;
+    padding: 0 8px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    /*padding: 0 15px;*/
+}
+.cell-wrapper-content {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+.cell-head-left {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+}
+.cell-wrapper:not(.cell-active):hover {
+    background-color: rgba(20, 44, 44, 0.13);
+    cursor: pointer;
+    color: var(--font-color);
+}
+.cell-wrapper .cell-head {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--font-color);
+    box-sizing: content-box;
+    width: 100%;
+}
+.cell-wrapper .cell-wrapper-left {
+    margin-right: 5px;
+    font-weight: 600;
+
+    width: 22px;
+    box-sizing: content-box;
+    color: var(--font-color);
+}
+.cell-wrapper .cell-wrapper-right {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    color: var(--font-color);
+}
+.cell-wrapper .cell-head .cell-head-left {
+   font-weight: 600;
+   font-size: 14px;
+}
+.cell-head {
+    font-size: large;
+    padding: 2px 0;
+    box-sizing: content-box;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+}
+.cell-wrapper-right {
+    width: 100%;
+}
+.cell-wrapper .cell-head-right {
+    font-size: small;
+}
+.cell-wrapper .cell-footer {
+    max-height: 28px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--font-color);
+    font-size: smaller;
+}
+.cell-active {
+    background-color: rgba(73,144,145,.6);
+}
+.cell-footer {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    border: none;
+}
+.cell-wrapper-right {
+    width: 100%;
+    overflow: hidden;
+
+}
+.cell-head-status {
+
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.cell-wrapper-left {
+    font-size: 1.3em;
+
+}
+.cell-head-right {
+    flex: 1;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

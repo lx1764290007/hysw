@@ -1,0 +1,13 @@
+.trigger-modal-wrapper {
+    max-height: max(55vh, 300px);
+    overflow-y: auto;
+    margin-top: 25px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+.delete-item {
+    position: relative;
+    margin: 0 auto;
+    display:  inline-block;
+    float: right;
+}

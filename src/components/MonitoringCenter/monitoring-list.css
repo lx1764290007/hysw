@@ -1,0 +1,43 @@
+.device-list-wrapper,.device-list-content,.device-list-search {
+
+    color: var(--font-color);
+}
+
+.device-list-content {
+    /*height: calc(100% - 64px - 32px - 46px - 10px - 40px);*/
+    overflow-y: auto;
+
+}
+.device-list-wrapper {
+    width: 300px;
+    height: 100%;
+    border-right: 1px solid var(--border-color);
+    padding: 0 10px 0 0;
+}
+.device-list-wrapper .device-list-wrapper .ant-menu-overflow-item {
+    color: var(--font-color) !important;
+}
+.device-list-wrapper .ant-collapse-header,.ant-collapse-content {
+    color: var(--font-color) !important;
+    background-color: inherit !important;
+}
+.device-list-wrapper .ant-collapse-content {
+    border-radius: 0 !important;
+}
+.device-list-wrapper .ant-collapse{
+    /*border: 1px solid var(--border-color) !important;*/
+    border-radius: 0;
+
+}
+.device-list-wrapper .ant-menu-item-active {
+    color: var(--font-color) !important;
+}
+.device-ant-layout-header {
+    line-height: normal;
+}
+
+.monitoring-center-group-manage-confirm-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

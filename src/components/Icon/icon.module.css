@@ -1,0 +1,63 @@
+.deviceIconWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.deviceIconSingle {
+    color: #e12164;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+}
+.deviceIconSingle:hover {
+    color: #cb2961;
+}
+.DeviceIconContentWrapper {
+    background-color: #333;
+    z-index: 1999;
+}
+.DeviceIconContent {
+    transition: all 1s linear;
+    background-image: url("../../assets/box-line-small.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-width: 400px;
+    min-height: 300px;
+    transform: translateY(30px);
+    box-sizing: border-box;
+}
+.DeviceIconContentWrapper .DeviceIconContentShow {
+    transform: translateY(0);
+    display: block;
+}
+.DeviceIconContentWrapper .DeviceIconContentHide {
+    display: none;
+}
+.DeviceIconContentWrapper .DeviceIconWrapperContent {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.DeviceIconContentWrapper .DeviceIconWrapperContent .DeviceIconWrapperContentLeft {
+    width: 40%;
+    box-sizing: border-box;
+}
+.DeviceIconContentWrapper .DeviceIconWrapperContent .DeviceIconWrapperContentRight {
+    width: 60%;
+    box-sizing: border-box;
+}
+.deviceIconWrapperCloseIcon {
+    position: absolute;
+    z-index: 1;
+    right: 14px;
+    top: 14px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.deviceIconWrapperCloseIcon:hover {
+    color: #67d9de;
+}

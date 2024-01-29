@@ -1,0 +1,29 @@
+.toast-wrapper {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 99;
+    background-color: rgba(255,255,245,0.2);
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: space-around;
+}
+.toast-container {
+    background-color: rgba(0,0,0,1);
+    padding: 6px 10px;
+    box-sizing: content-box;
+    border-radius: 6px;
+    text-align: center;
+}
+.toast-container span {
+    max-width: 400px;
+    text-overflow: inherit;
+    text-wrap: normal;
+    min-width: 100px;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+}
