@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Chart, Interval, Legend, LineAdvance, Tooltip} from "bizcharts";
+import {Chart, LineAdvance, Tooltip} from "bizcharts";
 import {useDebounceEffect, useSafeState} from "ahooks";
 import {LoadingComponent, STATUS} from "../LoadingAndRetry/Loading";
 import {fetchCollect} from "../../libs/request/sensor";
@@ -58,19 +58,11 @@ const Line = (props) => {
         color="_name"
       >
       </LineAdvance>
-      <Legend
-        flipPage={false}
-        itemWidth={50}
-        layout="horizontal"
-        position="right"
-        offsetY={0}
-        offsetX={0}
-      />
       <Tooltip>
         {
           (title, items) => {
             const item = items[0];
-            return <div style={{backgroundColor: "var(--background-color)"}}>
+            return <div>
               <p>{item.data.createTime}</p>
               <p><span className={"base-color-sensor"}>{item.data._name}</span> ：<span className={"base-color-exc"}>{item.value}</span></p>
             </div>;
