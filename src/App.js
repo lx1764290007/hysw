@@ -43,7 +43,6 @@ const App = () => {
     eventBus.subscribe("fullscreenchange", function(args) {
       setFullScreenState(args[0]);
     });
-    console.log(1);
   }, []);
   const local = useLocalStorage();
   _role.set(local.info?.dataType);

@@ -105,9 +105,9 @@ const BigSur = () => {
               <Card title={"告警统计"}>
                 <div className={Style?.cardWrapper}>
                   {/* eslint-disable-next-line react/jsx-key */}
-                  {alarmCount?.map?.((item)=> <div className={Style.cardItem}>
-                    <span className={Style.cardItemTitle} style={{color: TRIGGER_ALARM_GRADE.find((it)=> it.value === item.alarmGrade)?.color}}>{TRIGGER_ALARM_GRADE.find((it)=> it.value === item.alarmGrade)?.label}：</span>
-                    <span>{item.count}</span>
+                  {TRIGGER_ALARM_GRADE?.map?.((item)=> <div className={Style.cardItem}>
+                    <span className={Style.cardItemTitle} style={{color: item.color}}>{item.label}：</span>
+                    <span>{alarmCount?.find?.((it)=> it.alarmGrade === item.value)?.count}</span>
                   </div>)}
                 </div>
               </Card>
