@@ -15,8 +15,8 @@ import {fetchAlarmCount} from "../../libs/request/sensor";
 import {TRIGGER_ALARM_GRADE} from "../../libs/static";
 
 const format = "YYYY-MM-DD HH:mm:ss";
-const today = dayjs();
-const todayBefore30 = dayjs().subtract(30, "day");
+const today = dayjs().endOf("date");
+const todayBefore30 = dayjs().startOf("date").subtract(30, "day");
 const BigSur = () => {
   const [size, setSize] = useSafeState({});
   const debouncedValue = useDebounce(size, {wait: 300});
@@ -73,7 +73,7 @@ const BigSur = () => {
               style={{
                 "display": "flex"
               }}>
-              <Card title={`设备-${deviceList[active]?.name}-采集记录`} right={<DatePicker.RangePicker size={"small"} onChange={onDateChange} format={format} style={{width: 240}} />}>
+              <Card title={`设备-${deviceList[active]?.name || "..."}-采集记录`} right={<DatePicker.RangePicker defaultValue={[todayBefore30, today]} size={"small"} onChange={onDateChange} format={format} style={{width: 240}} />}>
                 <Carousel afterChange={onChange} autoplay autoplaySpeed={10000}>
                   {
                     deviceList.map((item)=>{

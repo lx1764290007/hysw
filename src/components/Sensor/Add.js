@@ -14,6 +14,7 @@ const layout = {
   }
 };
 
+// eslint-disable-next-line require-jsdoc
 export function Add(prop) {
   const [form] = Form.useForm();
   const [sensorTypes, setSensorTypes] = useSafeState([]);

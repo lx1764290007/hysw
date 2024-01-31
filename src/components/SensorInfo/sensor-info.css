@@ -1,6 +1,6 @@
 .sensor-info-wrapper {
-    max-height: 62vh;
-    overflow-y: auto;
+    height: 420px;
+    overflow-y: hidden;
     margin: 15px 0;
 }
 .sensor-info-container {

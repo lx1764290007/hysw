@@ -11,14 +11,37 @@
     width: 100vw;
     text-align: center;
     height: 60px;
-    background-image: url("../../assets/navigation.jpg");
+    /*background-image: url("../../assets/navigation.jpg");*/
     background-size: 100% 100%;
     background-repeat: no-repeat;
     transform: translateX(-60px);
 }
-.bigsurLogo h2 {
+.bigsurLogo2 {
+    width: 100vw;
+    text-align: center;
+    height: 60px;
+    background: linear-gradient(to bottom, #cee7d5, #daece2);
+    background-size: 100% 100%;
+    transform: translate(-60px, 0);
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+.bigsurLogo h2{
     margin-block: 0;
     padding-top: 18px;
+    letter-spacing: 1px;
+    color: var(--title-color);
+    font-size: 30px;
+    font-weight: 600;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--title-color);
+}
+.bigsurLogo2 h2{
+    margin-block: 0;
     letter-spacing: 1px;
     color: var(--title-color);
     font-size: 30px;

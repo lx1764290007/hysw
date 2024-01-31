@@ -49,7 +49,7 @@ const listenFullScreenChange = function(setState) {
   document.addEventListener("fullscreenchange", handler);
 };
 
-export const defaultTheme = "dark";
+export const defaultTheme = window.localStorage.getItem("theme") || "dark";
 export const useTheme = function() {
   const [state, setState] = React.useState(defaultTheme);
   const callback = function() {

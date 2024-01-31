@@ -24,7 +24,7 @@ export const GroupsSelector = function(prop) {
   return (
     <React.Fragment >
       <Select options={list}
-        style={{width: 120}}
+        style={{width: 220}}
         placeholder={"选择"}
         onChange={prop.onChange}
         value={prop.value}

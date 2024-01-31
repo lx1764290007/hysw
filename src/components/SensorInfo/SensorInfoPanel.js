@@ -38,7 +38,7 @@ const SensorInfoPanel = (prop) => {
         </div>
         <div className="sensor-info-panel-content-item">
           <span>当前电压 </span>
-          <span>{Number(prop.dataSource?.currentVoltage)*100 + " %"}</span>
+          <span>{prop.dataSource?.currentVoltage}</span>
         </div>
         {/* <div className="sensor-info-panel-content-item">*/}
         {/*  <span>没电电压</span>*/}

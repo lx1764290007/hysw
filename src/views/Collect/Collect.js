@@ -7,9 +7,12 @@ import {useForm} from "antd/es/form/Form";
 import {fetchGroupList} from "../../libs/request/group";
 import {fetchDeviceList} from "../../libs/request/device";
 import {fetchSensorType} from "../../libs/request/sensor";
+import {DeviceSelector} from "../../components/DeviceSelector/DeviceSelector";
+import {GroupsSelector} from "../../components/GroupsSelector/GroupsSelector";
 
 import dayJs from "dayjs";
 import dayjs from "dayjs";
+
 
 const {Content} = Layout;
 
@@ -211,10 +214,10 @@ export const Collect = () => {
 
         <Form.Item label={"点位"}
           name={"deviceGroupId"}>
-          <Select placeholder={"选择点位"} options={groupList.map((item)=> {return {label: item.name, value: item.id};})} style={{width: 200}} />
+          <GroupsSelector />
         </Form.Item>
         <Form.Item label={"设备"} name={"deviceManageId"} >
-          <Select placeholder={"选择设备"} options={deviceList.map((item)=> {return {label: item.name, value: item.id};})} style={{width: 200}} />
+          <DeviceSelector groupId={null} />
         </Form.Item>
         <Form.Item label={"日期"} name={"date"} initialValue={[todayBefore30, today]}>
           <DatePicker.RangePicker format={format} style={{width: 240}} />

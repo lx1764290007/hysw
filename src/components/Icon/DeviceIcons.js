@@ -107,7 +107,6 @@ export const DeviceIconContent = function(props) {
   const ref = useRef(null);
   const ref2 = useRef(null);
   const onShow = function() {
-    console.log(props.hideBox);
     !props.hideBox && setShow(true);
   };
   const onHide = function() {
@@ -119,7 +118,7 @@ export const DeviceIconContent = function(props) {
     <span onClick={onShow} ref={ref2}>
       {props.children}
     </span>
-    <Modal width={860} destroyOnClose onCancel={onHide} open={show} footer={false}>
+    <Modal width={960} destroyOnClose onCancel={onHide} open={show} footer={false}>
       <DeviceContent closeIcon={false} deviceId={props.deviceId} />
     </Modal>
   </div>);

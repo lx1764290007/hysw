@@ -3,9 +3,10 @@
     overflow-y: auto;
     position: relative;
     box-sizing: border-box;
+    box-shadow: 0 15px 10px -15px #000;
 }
 .light-theme .card-wrapper {
-    border: 1px solid #409ea1;
+    border: 1px solid #bcebec;
 }
 .card-wrapper::-webkit-scrollbar {
     display: none;
@@ -21,9 +22,11 @@
     background-image: url("../../assets/box.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+
 }
 .light-theme .card-panel {
-    background-image: url("../../assets/box.png");
+    background: linear-gradient(to bottom, #e1e8e8, #c7dedc);
+
 }
 .card-panel:hover {
     box-shadow: var(--box-shadow);

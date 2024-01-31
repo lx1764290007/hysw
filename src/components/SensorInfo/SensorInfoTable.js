@@ -8,8 +8,8 @@ import dayjs from "dayjs";
 import {fetchSensorList, fetchSensorType} from "../../libs/request/sensor";
 
 const format = "YYYY-MM-DD HH:mm:ss";
-const today = dayjs();
-const todayBefore30 = dayjs().subtract(30, "day");
+const today = dayjs().endOf("date");
+const todayBefore30 = dayjs().startOf("date").subtract(30, "day");
 
 const {RangePicker} = DatePicker;
 
@@ -90,7 +90,7 @@ const SensorInfoTable = (prop) => {
             float: "right"
           }} showTime placeholder={["开始时间", "结束时间"]} ok={"确定"} />
       </div>
-      <div style={{transform: "translateY(30px)"}}><MultipleChart.Line dataSource={data} />
+      <div style={{transform: "translateY(30px)", height: 360}}><MultipleChart.Line dataSource={data} />
       </div>
     </React.Fragment>
   );

@@ -4,6 +4,7 @@ import {useDebounceEffect, useSafeState} from "ahooks";
 import {LoadingComponent, STATUS} from "../LoadingAndRetry/Loading";
 import {fetchCollect} from "../../libs/request/sensor";
 import dayjs from "dayjs";
+import {Empty} from "antd";
 
 const format = "YYYY-MM-DD HH:mm:ss";
 const Line = (props) => {
@@ -49,27 +50,31 @@ const Line = (props) => {
       fetchData(props.sensorTypeList, props.deviceId);
     }
   }, [props.deviceId, props.filter, props.sensorTypeList], {wait: 220});
+
   return ( <LoadingComponent state={draw? STATUS.SUCCESS:STATUS.LOADING}><div className="screen-box-container">
-    {draw && <Chart autoFit data={dataSource}>
+    {draw && dataSource.length>0 && <Chart autoFit data={dataSource}>
       <LineAdvance
         shape="circle"
         point
         position="createTime*analysisValue"
         color="_name"
+        label={"单位：mm"}
       >
       </LineAdvance>
       <Tooltip>
         {
           (title, items) => {
-            const item = items[0];
+            const item = items?.[0];
+            if (!item) return <>无</>;
             return <div>
-              <p>{item.data.createTime}</p>
-              <p><span className={"base-color-sensor"}>{item.data._name}</span> ：<span className={"base-color-exc"}>{item.value}</span></p>
+              <p>{item?.data?.createTime}</p>
+              <p><span className={"base-color-sensor"}>{item?.data?._name}</span> ：<span className={"base-color-exc"}>{item?.value} {item?.data?.unit}</span></p>
             </div>;
           }
         }
       </Tooltip>
     </Chart> }
+    {dataSource.length<=0 && <Empty description={"没有数据"} style={{marginTop: 40}} />}
   </div>
   </LoadingComponent>
   );

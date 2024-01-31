@@ -1,7 +1,7 @@
 #a-map {
     width: 100%;
     height: calc((100vh - 64px - 24px) * 1 - 50px - 20px);
-    background-image: url("./1.png");
+    /*background-image: url("./1.png");*/
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;

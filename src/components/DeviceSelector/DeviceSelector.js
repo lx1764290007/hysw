@@ -26,7 +26,7 @@ export const DeviceSelector = function(prop) {
 
   return (
     <React.Fragment >
-      <Select style={{width: 120}}
+      <Select style={{width: 250}}
         options={list}
         onChange={prop.onChange}
         value={prop.value}
