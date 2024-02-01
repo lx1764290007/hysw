@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {Button, Form, Layout, Table, DatePicker, Select} from "antd";
 import "./collect.css";
-import {fetchCollectSearch} from "../../libs/request/sensor";
+import {fetchCollectSearch, fetchSensorList} from "../../libs/request/sensor";
 import {useMount, useSafeState} from "ahooks";
 import {useForm} from "antd/es/form/Form";
 import {fetchGroupList} from "../../libs/request/group";
@@ -41,6 +41,7 @@ export const Collect = () => {
   const [form] = useForm();
   const [deviceList, setDeviceList] = useSafeState([]);
   const [groupList, setGroupList] = useSafeState([]);
+  const [sensorList, setSensorList] = useSafeState([]);
   const [sensorType, setSensorType] = useSafeState([]);
   const [sensorId, setSensorId] = useSafeState(undefined);
   useEffect(()=>{
@@ -52,6 +53,9 @@ export const Collect = () => {
     });
     fetchSensorType().then((res)=>{
       setSensorType(res);
+    });
+    fetchSensorList().then((res)=>{
+      setSensorList(res);
     });
   }, []);
 
@@ -86,6 +90,13 @@ export const Collect = () => {
       render: (text, _, i) => <span key = {i} className={"base-color-device"}>{deviceList.find((item)=> item.id === text)?.name}</span>
     },
     {
+      title: "传感器名称",
+      dataIndex: "sensorManageId",
+      key: "sensorManageId",
+      align: "center",
+      render: (text)=> <span key = {i} className={"base-color-exc"}>{sensorList.find((item)=> item.id === text)?.name}</span>
+    },
+    {
       title: "传感器类型",
       dataIndex: "sensorType",
       key: "sensorType",
@@ -93,15 +104,9 @@ export const Collect = () => {
       render: (text, _, i) => <span key = {i} className={"base-color-sensor"}>{sensorType.find((item)=> item.sensorType === text)?.webView}</span>
     },
     {
-      title: "解析后的数据",
+      title: "上报数值",
       dataIndex: "analysisValue",
       key: "analysisValue",
-      align: "center"
-    },
-    {
-      title: "没有解析的基础数据",
-      dataIndex: "baseData",
-      key: "baseData",
       align: "center"
     },
 
