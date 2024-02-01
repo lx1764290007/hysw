@@ -94,7 +94,7 @@ export const Collect = () => {
       dataIndex: "sensorManageId",
       key: "sensorManageId",
       align: "center",
-      render: (text)=> <span key = {i} className={"base-color-exc"}>{sensorList.find((item)=> item.id === text)?.name}</span>
+      render: (text)=> <span key = {text} className={"base-color-exc"}>{sensorList.find((item)=> item.id === text)?.name}</span>
     },
     {
       title: "传感器类型",
